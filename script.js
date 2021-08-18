@@ -3,7 +3,12 @@ $(document).ready(function(){
         if(this.scrollY > 20){
             $('.navbar').addClass("sticky");
         }else{
-            $('navbar').removeClass("sticky"); //* Gör om det 
+            $('.navbar').removeClass("sticky"); //* Gör om det 
         }
-    })
+    });
+    // toggle menu/navbar script
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
 });

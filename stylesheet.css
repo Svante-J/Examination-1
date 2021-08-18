@@ -1,5 +1,26 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+/************************/
+/* 01. Globals              */
+/* 02. Nav                  */
+/* 03. Menu btn             */
+/* 04 Home                  */
+/* 05 Responsive media query*/
+/************************/
+
+
+/************************************************/
+/* 01. Globals          */
+/************************************************/
+
+:root {
+    --clr-primary: #367dad;
+    --clr-primary-light: #a9beac;
+    --clr-secondary: #ffffff;
+    --clr-accent: #f2b926;
+  }
 *{
     margin: 0;
     padding: 0;
@@ -11,7 +32,9 @@
     padding: 0 80px;
     margin: auto;
 }
-/*navbar styling */
+/************************************************/
+/* 02. Nav              */
+/************************************************/
 .navbar{
     position: fixed;
     width: 100%;
@@ -20,9 +43,9 @@
     transition: all 0.3s ease;
 }
 .navbar.sticky{
-    padding: 30px 0;
-    background: crimson;
-    color: crimson;
+    padding: 20px 0;
+    background: var(--clr-primary);
+    color: var(--clr-primary)
 }
 .navbar .max-width{
     display: flex;
@@ -30,13 +53,17 @@
     justify-content: space-between;
 }
 .navbar .logo a{
-    color: #fff;
+    color: var(--clr-secondary);
     font-size: 35px;
     font-weight: 600;
 }
 .navbar .logo a span{
-    color: crimson;
+    color: var(--clr-primary);
+    transition: all 0,3 ease;
 } 
+.navbar.sticky .logo a span{
+    color: var(--clr-secondary);
+}
 .navbar .menu li{
     list-style: none;
     display: inline-block;
@@ -49,17 +76,30 @@
     transition: color 0.3s ease;
 }
 .navbar .menu li a:hover{
-    color: crimson;
+    color: var(--clr-primary);
 }
-/* home section styling */
+/************************************************/
+/* 03 Menu btn styling             */
+/************************************************/
+.menu-btn{
+    color: var(--clr-secondary);
+    size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/************************************************/
+/* 04. Home             */
+/************************************************/
 .home{
     display: flex;
     background: url(images/bannert.jpg) no-repeat center;
     height: 100vh; 
    background-size: cover;
    background-attachment: fixed;
-    color: #fff;
+    color: var(--clr-secondary);
     min-height: 500px;
+    font-family: 'ubuntu', sans-serif;
 }
 .home .max-width{
     margin: auto 0 auto 40px;
@@ -77,6 +117,46 @@
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-  color: crimson;
+  color: var(--clr-primary);
   font-weight: 500;
+}
+
+/************************************************/
+/* 04. Responsive media query             */
+/************************************************/
+@media (max-width: 947px){
+    .max-width{
+        padding: 0 50px;
+    }
+    .menu-btn{       
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";
+        /*! vad gör han här?*/
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: var(--clr-primary);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    } 
+    .navbar . .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+
 }
