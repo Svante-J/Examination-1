@@ -134,7 +134,7 @@
 /************************************************/
 /* 05. about section styling */
 /************************************************/
-section{
+section {
     padding: 100px 0;
 }
 .about{
@@ -174,11 +174,74 @@ transform: translateX(-50%);
     width: 400px;
     object-fit: cover;
 }
-/* .testar{
-    height: 300pxh;
+/************************************************/
+/* 06. gallery carusel*/
+/************************************************/
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80%;
+    margin: 0 auto;
+}
+.carousel__img{
     width: 100%;
+    height: 100%;
     object-fit: cover;
-} */
+}
+.carousel__track-container {
+    background: var(--clr-primary);   
+    height: 100%;
+    }
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+   transform: translateY(50%);
+   background: transparent;
+   border: 0;
+   cursor: pointer;
+}
+
+.carousel__button--left {
+    left: -40px;
+}
+
+.carousel__button--right {
+    right: -40px;
+}
+
+.carousel__button i{
+    width: 12px;
+}
+.carousel__nav {    
+    display: flex;
+    justify-content: center;   
+    padding: 10px 0; 
+}
+
+.carousel__indicator {    
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--clr-primary);
+    margin: 0 1em;
+}
+.carousel__indicator.current-slide {
+    background: var(--clr-accent);
+}
+
 
 /************************************************/
 /* 06. Responsive media query             */
