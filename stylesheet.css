@@ -291,9 +291,13 @@ section {
     height: 15px;
     background: var(--clr-primary);
     margin: 0 1em;
+    cursor: pointer;
 }
 .carousel__indicator.current-slide {
     background: var(--clr-accent);
+}
+.is-hidden {
+    display: none;
 }
 
 
