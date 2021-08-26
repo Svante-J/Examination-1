@@ -97,8 +97,8 @@
     display: flex;
     background: url(images/bannert.jpg) no-repeat center;
     height: 100vh; 
-   background-size: cover;
-   background-attachment: fixed;
+    background-size: cover;
+    background-attachment: fixed;
     color: var(--clr-secondary);
     min-height: 500px;    
     font-family: 'ubuntu', sans-serif;
@@ -116,10 +116,11 @@
     margin: auto 0 auto 40px;
 }
 .home .home-content .text-1{
-    font-size: 27px;    
+     font-size: clamp(2rem, 2.5vw, 3rem);
+        
 }
 .home .home-content .text-2{
-    font-size: 75px;
+    font-size: clamp(6rem, 5vw, 8rem);
     font-weight: 600;
     margin-left: -3px;
 }
@@ -132,7 +133,7 @@
   font-weight: 500;
 }
 .about .about-content .column{
-    width: 50%;
+    max-width: 50%;
 }
 
 /************************************************/
@@ -142,6 +143,7 @@ section {
     padding: 100px 0;
 }
 .about{
+    height: 100vh; 
     font-family: 'Poppins',sans-serif ;
     color: var(--clr-primary);
 }
@@ -242,6 +244,7 @@ section {
     height: 100%;
     position: relative;
     overflow: hidden;
+    border-radius: 2em;
     }
 .carousel__track {
     padding: 0;
@@ -299,10 +302,21 @@ section {
 .is-hidden {
     display: none;
 }
-
+/************************************************/
+/* 07. grid          */
+/************************************************/
+.grid{
+    height: 100vh;
+}
+.my-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 100px;
+    height: 95vh;
+    background: #f2b926;
 
 /************************************************/
-/* 06. Responsive media query             */
+/* 08. Responsive media query             */
 /************************************************/
 @media (max-width: 1160px){
     .home .max-width{
@@ -310,6 +324,7 @@ section {
     }
     
 }
+
 @media (max-width: 1160px){
    
     .about .about-content .left img{
@@ -318,11 +333,7 @@ section {
       
     }    
 }
-@media (max-width: 991px){
-    .max-width{
-        padding: 0 50px;
-    }
-}
+
 @media (max-width: 947px){
     .max-width{
         padding: 0 50px;
@@ -332,7 +343,11 @@ section {
         z-index: 999;
     }
     .menu-btn i.active:before{
-        content: "\f00d";        
+        content: "\f00d";
+        
+    }
+    .logo{
+        margin-right: 5em;
     }
     .navbar .menu{
         position: fixed;
@@ -370,13 +385,23 @@ section {
             max-width: 800px;
         }
         .about .about-content .column{
-            width: 50%;
+            width: 80%;
         } 
+        .about .about-content{
+            display: block;
+            justify-content: center;
+        } 
+        .about .about-content .right{
+            display: flex;
+            flex-wrap: wrap;
+            
+            margin: 0 auto 60px;
+        }
         .about .about-content .left{
             display: flex;
             justify-content: center;
             margin: 0 auto 60px;
-        } 
+        }
     } 
 
 }
