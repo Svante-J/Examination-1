@@ -1,0 +1,402 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ubuntu:wght@400;500;700&display=swap');
+
+/************************/
+/* 01. Globals              */
+/* 02. Nav                  */
+/* 03. Menu btn             */
+/* 04 Home                  */
+/* 05 about section         */
+/* 05 Responsive media query*/
+/************************/
+
+
+/************************************************/
+/* 01. Globals          */
+/************************************************/
+
+:root {
+    --clr-primary: #367dad;
+    --clr-primary-light: #a9beac;
+    --clr-secondary: #ffffff;
+    --clr-accent: #f2b926;
+  }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+/************************************************/
+/* 02. Nav              */
+/************************************************/
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999 ;
+    padding: 30px 0;   
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar.sticky{
+    padding: 20px 0;
+    background: var(--clr-primary);
+    color: var(--clr-primary)
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: var(--clr-secondary);
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: var(--clr-primary);
+    transition: all 0,3 ease;
+} 
+.navbar.sticky .logo a span{
+    color: var(--clr-secondary);
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: var(--clr-primary);
+}
+/************************************************/
+/* 03 Menu btn styling             */
+/************************************************/
+.menu-btn{
+    color: var(--clr-secondary);
+    size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/************************************************/
+/* 04. Home             */
+/************************************************/
+.home{
+    display: flex;
+    background: url(images/bannert.jpg) no-repeat center;
+    height: 100vh; 
+   background-size: cover;
+   background-attachment: fixed;
+    color: var(--clr-secondary);
+    min-height: 500px;    
+    font-family: 'ubuntu', sans-serif;
+}
+.home .max-width{
+    width: 100%;
+    display: flex;
+}
+.home .home-container{
+    background: var(--clr-accent);
+    padding: 3em;
+    border-radius: 2em;
+}
+.home .max-width{
+    margin: auto 0 auto 40px;
+}
+.home .home-content .text-1{
+    font-size: 27px;    
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+  color: var(--clr-primary);
+  font-weight: 500;
+}
+.about .about-content .column{
+    width: 50%;
+}
+
+/************************************************/
+/* 05. about section styling */
+/************************************************/
+section {
+    padding: 100px 0;
+}
+.about{
+    font-family: 'Poppins',sans-serif ;
+    color: var(--clr-primary);
+}
+.about .title{
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    margin: bottom 20px;    
+    padding: 20px;
+    text-align: center;
+    font-family: 'Ubuntu', sans-serif;
+}
+.about .title::before{
+    content: "";
+    position:  absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: var(--clr-primary);
+    transform: translateX(-50%);
+}
+.about .title::after{
+    content: "Who i am";
+    position:  absolute;
+    bottom: -12px;
+    left: 50%;
+    font-size: 20px;
+    color: var(--clr-primary);
+    padding: 5px;
+    background: var(--clr-secondary);
+    transform: translateX(-50%);
+}
+.about .about-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1em;
+}
+.about .about-content .left{
+    width: 45%;
+}
+.about .about-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 2em;
+}
+.about .about-content .right{
+    display: inline-block;
+  padding: 1em;
+    width: 55%;
+    background: var(--clr-primary);
+    color: var(--clr-secondary);
+}
+.about .about-content .right .text span{
+    color: var(--clr-accent);
+}
+.about .about-content .right p{
+    text-align: justify;
+}
+.about .about-content .right a{
+    display: inline-block;
+    background: var(--clr-secondary);
+    color: var(--clr-primary);
+    font-size: 20px;
+    font-weight: 500;
+    padding: 2px 30px;
+    margin-top: 20px;
+    border-radius: 1em;
+    border:2px solid var(--clr-primary);
+    transition: all 0.3s ease;    
+}
+.about .about-content .right a:hover{
+    color: var(--clr-secondary);
+    border-radius: 1em;
+    border: 2px solid var(--clr-secondary);
+    background: none;
+}
+/************************************************/
+/* 06. gallery carusel*/
+/************************************************/
+.carousel {
+    position: relative;
+    height: 600px;
+    width: 80% ;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.carousel__img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.carousel__track-container {
+    background: var(--clr-primary);   
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    }
+.carousel__track {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    position: relative;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+.carousel__slide {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+.carousel__button {
+    position: absolute;
+    top: 50%;
+   transform: translateY(50%);
+   background: transparent;
+   border: 0;
+   cursor: pointer;
+}
+
+.carousel__button--left {
+    left: -40px;
+}
+
+.carousel__button--right {
+    right: -40px;
+}
+
+.carousel__button i{
+    width: 12px;
+}
+.carousel__nav {    
+    display: flex;
+    justify-content: center;   
+    padding: 10px 0; 
+}
+
+.carousel__indicator {    
+    border: 0;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    background: var(--clr-primary);
+    margin: 0 1em;
+    cursor: pointer;
+}
+.carousel__indicator.current-slide {
+    background: var(--clr-accent);
+}
+.is-hidden {
+    display: none;
+}
+
+
+/************************************************/
+/* 06. Responsive media query             */
+/************************************************/
+@media (max-width: 1160px){
+    .home .max-width{
+        margin-left: 0;
+    }
+    
+}
+@media (max-width: 1160px){
+   
+    .about .about-content .left img{
+        height: 300px;
+        width: 300px;
+      
+    }    
+}
+@media (max-width: 991px){
+    .max-width{
+        padding: 0 50px;
+    }
+}
+@media (max-width: 947px){
+    .max-width{
+        padding: 0 50px;
+    }
+    .menu-btn{       
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before{
+        content: "\f00d";        
+    }
+    .logo{
+        margin-right: 5em;
+    }
+    .navbar .menu{
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: var(--clr-primary);
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active{
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    } 
+    .navbar .menu li a{
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    @media (max-width: 800px){
+        .max-width{
+            padding: 0 23px;
+        }
+        .home-container{
+            max-width: 30em;
+            }
+        }
+        .home .home-content .text-2{
+            font-size: 30px;
+        }
+       
+        .home .home-content .text-3{
+            font-size: 20px;
+        }
+        .max-width{
+            max-width: 800px;
+        }
+        .about .about-content{
+            display: block;            
+            margin-top: 1em;
+           
+        }
+        .about .about-content .column{
+            width: 50%; 
+                       
+        } 
+        .about .about-content .left{
+            display: flex;
+            
+            justify-content: center;
+            margin: 0 auto 60px;
+        } 
+        .about .about-content .right{
+          
+            width: auto;
+            margin: 0 auto 60px;
+        }
+    } 
+
+}
